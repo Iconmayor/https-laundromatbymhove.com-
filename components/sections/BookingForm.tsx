@@ -1,5 +1,6 @@
 'use client';
-import {useEffect,useState} from 'react';
+import {Suspense,useCallback,useEffect,useState} from 'react';
+import {useSearchParams} from 'next/navigation';
 import Link from 'next/link';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
@@ -7,9 +8,17 @@ import {bookingSchema,bookingSummary,localDate,type Booking} from '@/lib/booking
 import {services,site,track,whatsappLink} from '@/lib/siteConfig';
 import Icon from '../ui/Icon';
 
-export default function BookingForm({service,saveEnabled=false}:{service?:string;saveEnabled?:boolean}){
- const defaultService=services.some(s=>s.slug===service)?service:'';
- const {register,handleSubmit,formState:{errors}}=useForm<Booking>({resolver:zodResolver(bookingSchema),defaultValues:{name:'',phone:'',service:defaultService,address:'',date:'',time:'Flexible',notes:''}});
+function InitialService({onService}:{onService:(value:string)=>void}){
+ const service=useSearchParams().get('service');
+ useEffect(()=>{
+  if(service&&services.some(entry=>entry.slug===service))onService(service);
+ },[service,onService]);
+ return null;
+}
+
+export function BookingForm({readService=false,saveEnabled=false}:{readService?:boolean;saveEnabled?:boolean}){
+ const {register,handleSubmit,resetField,getFieldState,formState:{errors}}=useForm<Booking>({resolver:zodResolver(bookingSchema),defaultValues:{name:'',phone:'',service:'',address:'',date:'',time:'Flexible',notes:''}});
+ const preselect=useCallback((value:string)=>{if(!getFieldState('service').isDirty)resetField('service',{defaultValue:value});},[getFieldState,resetField]);
  const [minimumDate,setMinimumDate]=useState('');
  useEffect(()=>setMinimumDate(localDate()),[]);
  const [ready,setReady]=useState<{href:string;summary:string}|null>(null);
@@ -23,6 +32,7 @@ export default function BookingForm({service,saveEnabled=false}:{service?:string
  const error=(name:keyof Booking)=>errors[name]?.message?<span id={'err-'+name} className="field-error">{errors[name]?.message}</span>:null;
  const desc=(name:keyof Booking)=>errors[name]?'err-'+name:undefined;
  return <form className="conversion-form" onSubmit={handleSubmit(submit)} noValidate>
+    {readService&&<Suspense fallback={null}><InitialService onService={preselect}/></Suspense>}
     <div className="form-grid">
     <label>Full name<input {...register('name')} autoComplete="name" placeholder="Your full name" aria-invalid={!!errors.name} aria-describedby={desc('name')}/>{error('name')}</label>
     <label>Phone number<input {...register('phone')} type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. 080…" aria-invalid={!!errors.phone} aria-describedby={desc('phone')}/>{error('phone')}</label>
