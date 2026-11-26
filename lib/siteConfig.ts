@@ -4,8 +4,7 @@ export const site = {
   description: 'Explore laundry pickup, garment care, home cleaning, office janitorial and pest control in Nigeria. Ask for a quote or arrange a pickup on WhatsApp.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://laundromat-by-mhove.vercel.app',
   original: 'https://laundromatbymhove.com',
-  whatsapp: '2348081234373',
-  displayPhone: '+234 808 123 4373',
+  displayPhone: '+234 812 904 4751',
   email: 'support@laundromat.ng',
   customerIOS:'https://apps.apple.com/ng/app/laudromat/id6826253623',
   customerAndroid:'https://play.google.com/store/apps/details?id=com.mhoveappltd.laundromat',
@@ -21,9 +20,9 @@ export const brandLogos = {
   light: '/brand/laundromat-logo-light.png',
   blue: '/brand/laundromat-logo-blue.png',
 } as const;
-export const whatsappLink = (message: string) => 'https://wa.me/' + site.whatsapp + '?text=' + encodeURIComponent(message);
+export const whatsappLink = (message: string) => `https://wa.me/${site.displayPhone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
 export const stages = {
-  'home-cleaning': {name:'Home', scene:'mop', title:['Fresh clothes.','Spotless spaces.'], theme:'#142c45', action:'Book a Pickup', description:'From wash-and-fold to deep home cleaning, office janitorial and fumigation, we collect, clean and deliver, so you get your time back.'},
+  'home-cleaning': {name:'Home', scene:'mop', title:['Fresh clothes.','Spotless spaces.'], theme:'#142c45', action:'Book Home Cleaning', description:'From wash-and-fold to deep home cleaning, office janitorial and fumigation, we collect, clean and deliver, so you get your time back.'},
   laundry: {name:'Laundry', scene:'white-shirt', title:['Beautifully washed.','Freshly pressed.'], theme:'#173f65', action:'Book a Pickup', description:'From a favourite shirt to a full week of laundry, arrange pickup and ask for the finish your fabrics need.'},
   'office-cleaning': {name:'Office', scene:'scrubber', title:['Clear desks.','Spotless workspaces.'], theme:'#101d34', action:'Get a Quote', description:'Arrange professional janitorial care for reception areas, meeting rooms and the floors that see everyone through the day.'},
   fumigation: {name:'Fumigation', scene:'sprayer', title:['Professional care.','Protected spaces.'], theme:'#113c3b', action:'Get a Quote', description:'Speak with a professional about pest management for your home or workplace and the preparation your property needs.'},

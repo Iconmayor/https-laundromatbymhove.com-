@@ -25,16 +25,6 @@ export default function Hero() {
     return () => media.removeEventListener('change', syncMotion);
   }, []);
 
-  useEffect(() => {
-    function syncScene() {
-      const selected = variantOrder.find((service) => window.location.hash === `#${service}`);
-      setVariant(selected ?? defaultVariant);
-    }
-    syncScene();
-    window.addEventListener('hashchange', syncScene);
-    return () => window.removeEventListener('hashchange', syncScene);
-  }, []);
-
   function toggleMotion() {
     const nextPaused = !paused;
     document.documentElement.dataset.motion = nextPaused ? 'paused' : 'live';
@@ -54,12 +44,12 @@ export default function Hero() {
       <div className="shell hero-layout">
         <div className="hero-copy">
           <span className="eyebrow light"><i />Professional laundry &amp; cleaning</span>
-          <div className="hero-content">
+          <div className="hero-content" id="hero-service-copy" aria-live="polite" aria-atomic="true">
             <h1><span>{current.title[0]}</span>{' '}<em>{current.title[1]}</em></h1>
             <p>{current.description}</p>
           </div>
           <div className="hero-actions">
-            <Link href={`/book?service=${variant === defaultVariant ? 'laundry' : variant}`} className="button primary">
+            <Link href={`/book?service=${variant}`} className="button primary">
               <Icon name="bag" size={17} />{current.action}
             </Link>
             <a href="#services" className="button secondary">View Services</a>
@@ -68,16 +58,22 @@ export default function Hero() {
 
         <Stage key={current.scene} model={current.scene} kind="hero" label={`${current.name} service studio model`} className="hero-stage" />
         <BubbleField />
-        <nav className="variant-switch" aria-label="Jump to a service">
+        <div className="variant-switch" role="group" aria-label="Preview a service">
           {variantOrder.map((service) => (
-            <a href={`#${service}`} key={service} data-active={service === variant ? true : undefined}>
+            <button
+              key={service}
+              type="button"
+              aria-controls="hero-service-copy"
+              aria-pressed={service === variant}
+              onClick={() => setVariant(service)}
+            >
               <span className="mini-product">
                 <img src={`/posters/${stages[service].scene}.webp`} alt="" width="54" height="42" />
               </span>
               <span>{stages[service].name}</span>
-            </a>
+            </button>
           ))}
-        </nav>
+        </div>
 
         <div className="hero-bottom">
           <a href="#services" className="scroll-cue"><span><Icon name="down" size={15} /></span>Scroll to explore</a>
@@ -86,7 +82,7 @@ export default function Hero() {
               <Icon name={paused ? 'play' : 'pause'} size={13} />
             </button>
             <span>{current.name} care</span><i />
-            <span>{String(variantOrder.indexOf(variant) + 1).padStart(2, '0')} / 04</span>
+            <span>{String(variantOrder.indexOf(variant) + 1).padStart(2, '0')} / {String(variantOrder.length).padStart(2, '0')}</span>
           </div>
         </div>
       </div>
