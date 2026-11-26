@@ -3,9 +3,16 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import {useEffect,useState} from 'react';
 import {usePathname} from 'next/navigation';
-import {site,services,track,whatsappLink} from '@/lib/siteConfig';
+import {brandLogos,site,services,track,whatsappLink} from '@/lib/siteConfig';
 import Icon from './Icon';
-export function Brand({light=false}:{light?:boolean}){return <Link className="brand" href="/" aria-label="Laundromat by MHOVE home"><img src={light?"/brand/brand-light.webp":"/brand/brand-blue.webp"} width="38" height="38" alt=""/><span>Laundromat<small>BY MHOVE</small></span></Link>}
+export function Brand({light = false}: {light?: boolean}) {
+  return (
+    <Link className="brand" href="/" aria-label="Laundromat by MHOVE home">
+      <img src={light ? brandLogos.light : brandLogos.blue} width="38" height="38" alt="" />
+      <span>Laundromat<small>BY MHOVE</small></span>
+    </Link>
+  );
+}
 const MobileNav=dynamic(()=>import('./MobileNav'),{ssr:false});
 const nav=[['/services','Services'],['/how-it-works','How it works'],['/vendors','For partners'],['/support','Support']];
 export function Navigation(){const pathname=usePathname(); const [open,setOpen]=useState(false);const [visited,setVisited]=useState(false);

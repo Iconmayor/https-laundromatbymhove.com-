@@ -56,7 +56,7 @@ export default function MotionEffects(){
    }
    let lenis:Lenis|undefined;
    let tick:((t:number)=>void)|undefined;
-   if(!reduced&&pointer){lenis=new Lenis({lerp:timing.lerp,wheelMultiplier:timing.wheel,anchors:true});lenis.on('scroll',ScrollTrigger.update);tick=t=>lenis?.raf(t*1000);gsap.ticker.add(tick);}
+   if(!reduced&&pointer){lenis=new Lenis({lerp:timing.lerp,wheelMultiplier:timing.wheel,anchors:{immediate:true}});lenis.on('scroll',ScrollTrigger.update);tick=t=>lenis?.raf(t*1000);gsap.ticker.add(tick);}
    const id=requestAnimationFrame(()=>ScrollTrigger.refresh());
    restore=()=>{cancelAnimationFrame(id);ctx.revert();cleanup.forEach(fn=>fn());if(tick)gsap.ticker.remove(tick);lenis?.destroy();};
   }

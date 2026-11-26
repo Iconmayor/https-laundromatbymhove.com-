@@ -45,7 +45,7 @@ export function ServiceIndex(){
 const stageKind:Record<string,string>={laundry:'laundry','home-cleaning':'home','office-cleaning':'office',fumigation:'mist'};
 export function ServiceChapter({service,index}:{service:Service;index:number}){
  const floor=service.slug==='home-cleaning';
- return <section id={service.slug} className={'section chapter theme-'+service.theme+(index%2?' chapter-swap':'')} data-theme={service.theme}>
+ return <section id={service.slug} tabIndex={-1} aria-label={service.name} className={'section chapter theme-'+service.theme+(index%2?' chapter-swap':'')} data-theme={service.theme}>
    <div className="shell chapter-grid">
      <div className="chapter-copy" data-reveal><span className="eyebrow"><i/>{service.name}</span><h2>{service.title[0]} <em>{service.title[1]}</em></h2><p className="lead">{service.summary}</p><ul className="detail-list">{service.items.slice(0,4).map(item=><li key={item}><Icon name="check" size={15}/>{item}</li>)}</ul><Link className="button ink" href={'/services/'+service.slug}>Explore {service.short.toLowerCase()}<Icon name="forward" size={18}/></Link></div>
      <div className={'chapter-art '+(floor?'chapter-floor':'')}>

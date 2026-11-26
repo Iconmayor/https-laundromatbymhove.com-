@@ -17,12 +17,16 @@ export const site = {
   // TODO: add approved quotes and consented customer names here.
   testimonials: [] as {quote:string; name:string}[],
 };
+export const brandLogos = {
+  light: '/brand/laundromat-logo-light.png',
+  blue: '/brand/laundromat-logo-blue.png',
+} as const;
 export const whatsappLink = (message: string) => 'https://wa.me/' + site.whatsapp + '?text=' + encodeURIComponent(message);
 export const stages = {
-  'home-cleaning': {name:'Home', scene:'mop', title:['Fresh clothes.','Spotless spaces.'], theme:'#142c45', tint:'#9dc8fa', action:'Book a Pickup', description:'From wash-and-fold to deep home cleaning, office janitorial and fumigation, we collect, clean and deliver, so you get your time back.'},
-  laundry: {name:'Laundry', scene:'white-shirt', title:['Beautifully washed.','Freshly pressed.'], theme:'#173f65', tint:'#c5e2ff', action:'Book a Pickup', description:'From a favourite shirt to a full week of laundry, arrange pickup and ask for the finish your fabrics need.'},
-  'office-cleaning': {name:'Office', scene:'scrubber', title:['Clear desks.','Spotless workspaces.'], theme:'#101d34', tint:'#b2cce9', action:'Get a Quote', description:'Arrange professional janitorial care for reception areas, meeting rooms and the floors that see everyone through the day.'},
-  fumigation: {name:'Fumigation', scene:'sprayer', title:['Professional care.','Protected spaces.'], theme:'#113c3b', tint:'#beeae0', action:'Get a Quote', description:'Speak with a professional about pest management for your home or workplace and the preparation your property needs.'},
+  'home-cleaning': {name:'Home', scene:'mop', title:['Fresh clothes.','Spotless spaces.'], theme:'#142c45', action:'Book a Pickup', description:'From wash-and-fold to deep home cleaning, office janitorial and fumigation, we collect, clean and deliver, so you get your time back.'},
+  laundry: {name:'Laundry', scene:'white-shirt', title:['Beautifully washed.','Freshly pressed.'], theme:'#173f65', action:'Book a Pickup', description:'From a favourite shirt to a full week of laundry, arrange pickup and ask for the finish your fabrics need.'},
+  'office-cleaning': {name:'Office', scene:'scrubber', title:['Clear desks.','Spotless workspaces.'], theme:'#101d34', action:'Get a Quote', description:'Arrange professional janitorial care for reception areas, meeting rooms and the floors that see everyone through the day.'},
+  fumigation: {name:'Fumigation', scene:'sprayer', title:['Professional care.','Protected spaces.'], theme:'#113c3b', action:'Get a Quote', description:'Speak with a professional about pest management for your home or workplace and the preparation your property needs.'},
 } as const;
 export type Variant = keyof typeof stages;
 export const variantOrder: Variant[] = ['laundry','home-cleaning','office-cleaning','fumigation'];

@@ -15,7 +15,7 @@ npm run build
 npm start
 ```
 
-The home page shows the studio poster immediately. A single lazy-loaded React Three Fiber canvas loads the active GLB on demand and follows the scene markers as the page scrolls. GSAP and ScrollTrigger coordinate object movement, section reveals, progress and the four service wipes. Lenis runs on desktop when motion is allowed. The cloth uses a morph target and the washer drum has a separate rotation pivot. Two-dimensional soap bubbles, floor masks and sparkles animate independently of the canvas.
+The home page shows the studio poster immediately. A single lazy-loaded React Three Fiber canvas loads the active GLB on demand and follows the scene markers as the page scrolls. GSAP and ScrollTrigger coordinate object movement, section reveals and progress. The four hero service links go directly to their sections. Lenis smooths desktop wheel scrolling when motion is allowed. The cloth uses a morph target and the washer drum has a separate rotation pivot. Two-dimensional soap bubbles, floor masks and sparkles animate independently of the canvas.
 
 Use the home hero pause button or the browser’s reduced-motion setting to pause. Reduced-motion and WebGL failures retain service content and posters. Lower-power devices can use the lightweight mop video. The model meshes use Meshopt. Self-hosted assets keep the renderer independent of CDN script or model requests.
 
