@@ -1,0 +1,116 @@
+{
+  "source": "https://laundromatbymhove.com/terms",
+  "title": "Terms & Conditions",
+  "updated": "September 2026",
+  "sections": [
+    {
+      "heading": "1. Acceptance of Term",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "By accessing, downloading, or using the Laundromat platform (operated by Laundromat Technologies), you agree to be bound by these Terms & Conditions. If you do not agree to all terms, you must not access or use our services."
+        }
+      ]
+    },
+    {
+      "heading": "2. Service Description",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Laundromat is an on-demand marketplace connecting customers with independent, verified service providers for:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Laundry & Dry Cleaning (Wash & fold, steam pressing, suits, native wear, and beddings)",
+            "Home & Residential Cleaning (Deep cleaning, kitchen/bath sanitization, move-in/out cleanup)",
+            "Commercial & Office Janitorial (Regular corporate workspace maintenance)",
+            "Fumigation & Pest Control (Certified residential & commercial pest eradication)",
+            "Upholstery & Carpet Care (Steam shampooing for sofas, mattresses, and rugs)"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "We provide the technology platform enabling users to schedule, manage, track, and pay for services."
+        }
+      ]
+    },
+    {
+      "heading": "3. User Accounts & Verification",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To book services, you must register for an account using a valid Nigerian phone number and accurate profile details. You are solely responsible for maintaining the confidentiality of your credentials and all activity occurring under your account."
+        }
+      ]
+    },
+    {
+      "heading": "4. Bookings, Scheduling & Cancellations",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "When placing a booking, you enter into a service agreement with the assigned independent service provider. You may schedule pickups and service dates based on available capacity slots. Free cancellation is permitted before provider dispatch or laundry pickup."
+        }
+      ]
+    },
+    {
+      "heading": "5. Payments, Fees & Escrow",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All payments are processed securely through Monnify (licensed by the Central Bank of Nigeria). Customer payments are held in escrow and released to service providers upon verified task completion. Laundromat may charge transparent platform processing and delivery fees."
+        }
+      ]
+    },
+    {
+      "heading": "6. Service Provider Responsibilities",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Providers on our platform undergo identity and KYC verification. Providers are required to maintain professional conduct, use safety-certified materials (e.g. NAFDAC-approved fumigation chemicals), and adhere strictly to agreed scheduling windows."
+        }
+      ]
+    },
+    {
+      "heading": "7. Customer Responsibilities",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "Provide precise property addresses and gate access instructions.",
+            "Disclose specific fabric sensitivities, existing garment damages, or pest infestation severity.",
+            "Ensure an authorized adult is available during service execution and pickup/delivery windows.",
+            "Check and empty all pockets prior to handing over laundry items."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "8. Limitation of Liability & Protection",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Laundromat acts as a technology intermediary connecting clients with service providers. While we mediate disputes and enforce strict quality guarantees, our maximum aggregate liability for any single order is limited to the value of the booking paid."
+        }
+      ]
+    },
+    {
+      "heading": "9. Governing Law",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These Terms are governed by and construed in accordance with the laws of the Federal Republic of Nigeria."
+        }
+      ]
+    },
+    {
+      "heading": "10. Contact Us",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you have any questions regarding these Terms, please contact our legal and support team at support@laundromat.ng."
+        }
+      ]
+    }
+  ]
+}

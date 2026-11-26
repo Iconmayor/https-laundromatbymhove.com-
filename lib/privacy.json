@@ -1,0 +1,105 @@
+{
+  "source": "https://laundromatbymhove.com/privacy",
+  "title": "Privacy Policy",
+  "updated": "September 2026",
+  "sections": [
+    {
+      "heading": "1. Information We Get",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "At Laundromat Technologies, we collect necessary information to provide seamless home and laundry services:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Profile Information: Name, phone number, email address, and saved pickup/delivery addresses.",
+            "Payment Metadata: Transaction reference IDs and status (card numbers and CVVs are processed directly by Monnify and never stored on our servers).",
+            "Location Data: GPS coordinates to enable courier routing, provider matching, and live tracking.",
+            "Device & Usage Data: Operating system version, IP address, and in-app analytics to ensure app stability."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. How We Use Your Information",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We use the collected information exclusively to:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Facilitate order dispatch, pickup, cleaning execution, and delivery.",
+            "Process secure payments and disburse provider earnings.",
+            "Send real-time push notifications regarding order progress.",
+            "Detect and prevent fraud, account tampering, or abuse."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Information Sharing & Third Parties",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We never sell your personal data. We only share necessary information with:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Assigned Service Providers: Address and contact number to fulfill your booking.",
+            "Payment Infrastructure: Monnify to process authorized transactions.",
+            "Cloud & Push Infrastructure: Firebase (Google Cloud) for encrypted database storage and FCM push notifications."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Data Security",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We implement enterprise-grade security measures, including end-to-end encryption, Firestore security rules, and strict access controls, to protect your personal information from unauthorized access, alteration, or disclosure."
+        }
+      ]
+    },
+    {
+      "heading": "5. Your Privacy Rights (NDPR)",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Under the Nigeria Data Protection Regulation (NDPR), you have the right to:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Access and request a copy of your personal data.",
+            "Request correction of inaccurate or incomplete records.",
+            "Request complete account and data deletion at any time.",
+            "Opt out of promotional communications."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "6. Changes to Privacy Policy",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We may update our Privacy Policy from time to time. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+        }
+      ]
+    },
+    {
+      "heading": "7. Contact Us",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "For any privacy inquiries or deletion requests, email our Data Protection Officer at privacy@laundromat.ng."
+        }
+      ]
+    }
+  ]
+}
