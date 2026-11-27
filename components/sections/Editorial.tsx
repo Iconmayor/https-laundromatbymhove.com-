@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Stage from '../three/Stage';
+import PhoneVisual from '../ui/PhoneVisual';
 import Icon, {type IconName} from '../ui/Icon';
 import {site,services,packages,journey,type Service} from '@/lib/siteConfig';
 import FloorDust from '../three/FloorDust';
@@ -26,7 +27,7 @@ export function FeaturedPhoto({service,preview=false}:{service:Service;preview?:
 export function Intro({title,accent,text,eyebrow,model,label,actions,theme='ice'}:{title:string;accent:string;text:string;eyebrow:string;model?:string;label?:string;actions?:React.ReactNode;theme?:string}){
  return <section className={'page-intro section theme-'+theme} data-theme={theme}><div className={'shell intro-grid'+(model?' has-product':'')}>
    <div className="intro-copy"><span className="eyebrow"><i/>{eyebrow}</span><h1>{title} <em>{accent}</em></h1><p className="lead">{text}</p>{actions&&<div className="actions">{actions}</div>}</div>
-   {model&&<div className="intro-art"><div className="art-orbit"/><Stage kind="intro" model={model} label={label||eyebrow+' 3D visual'}/></div>}
+   {model&&<div className="intro-art"><div className="art-orbit"/>{model==='customer-phone'||model==='vendor-phone'||model==='tracking-phone'?<PhoneVisual variant={model==='tracking-phone'?'tracking':'welcome'} caption={model==='vendor-phone'?'Customer app preview — vendor app interface differs.':undefined} priority/>:<Stage kind="intro" model={model} label={label||eyebrow+' 3D visual'}/>}</div>}
  </div></section>
 }
 

@@ -431,3 +431,20 @@ html[data-motion=paused] .hero-content h1 span,html[data-motion=paused] .hero-co
 .clip-cover:hover span{background:#2763ad}
 .clip-cover:focus-visible{outline-offset:-5px}
 @media(max-width:767px){.featured-inset{border-width:2px;border-radius:9px;width:25%}.clip-frame{width:min(100%,355px);border-radius:18px}}
+
+/* Original Laundromat app imagery, with transparent layered phone compositions. */
+.phone-visual{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;isolation:isolate;margin:0;padding:14px;overflow:hidden;border-radius:inherit}
+.phone-visual-image{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(10,33,65,.17));display:block}
+.phone-visual.has-caption{padding-bottom:42px}
+.phone-visual figcaption{position:absolute;bottom:12px;left:8%;right:8%;text-align:center;font-size:.72rem;line-height:1.4;opacity:.85;color:inherit}
+.app-screen-gallery{padding-block:clamp(36px,6vw,80px)}
+.app-screen-gallery h2{margin:0 0 8px}
+.app-screen-gallery .lead{max-width:620px;margin-bottom:28px}
+.app-screen-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(168px,22%);gap:20px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding:12px 7px 24px;scrollbar-width:thin}
+.app-screen-card{margin:0;scroll-snap-align:start;min-width:0;text-align:center}
+.app-screen-frame{border-radius:25px;background:linear-gradient(130deg,#c5d3e5,#1a2737 45%,#b6c5d8);padding:5px;box-shadow:0 12px 22px #102e4d26;overflow:hidden}
+.app-screen-frame img{width:100%;height:auto;display:block;border:3px solid #17222f;border-radius:21px}
+.app-screen-card figcaption{font-size:.85rem;font-weight:700;margin-top:12px}
+@media(prefers-reduced-motion:no-preference){html:not([data-motion=paused]) .phone-visual-image{animation:app-visual-float 7s ease-in-out infinite}}
+@keyframes app-visual-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:767px){.phone-visual{padding:8px}.phone-visual.has-caption{padding-bottom:38px}.phone-art{min-height:clamp(320px,100vw,490px)}.app-screen-track{grid-auto-columns:minmax(155px,48%);gap:14px}.app-screen-frame{border-radius:20px}.app-screen-frame img{border-radius:16px}}
