@@ -1,5 +1,6 @@
 'use client';
 import type {MouseEvent, ReactNode} from 'react';
+import Link from 'next/link';
 import {site,track} from '@/lib/siteConfig';
 
 export default function BookAppLink({className,children,service}:{className:string;children:ReactNode;service?:string}){
@@ -13,5 +14,5 @@ export default function BookAppLink({className,children,service}:{className:stri
   track('customer_app_download_click',android?'android':'apple');
   window.location.assign(android?site.customerAndroid:site.customerIOS);
  }
- return <a className={className} href="/download#customer-app" onClick={openStore}>{children}</a>;
+ return <Link className={className} href="/download#customer-app" onClick={openStore}>{children}</Link>;
 }
