@@ -5,7 +5,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://laundromat-by-mhove.vercel.app',
   original: 'https://laundromatbymhove.com',
   displayPhone: '+234 812 904 4751',
-  email: 'support@laundromat.ng',
+  email: 'contactus@mhove.ng',
   customerIOS:'https://apps.apple.com/ng/app/laudromat/id6826253623',
   customerAndroid:'https://play.google.com/store/apps/details?id=com.mhoveappltd.laundromat',
   vendorIOS:'https://apps.apple.com/ng/app/laudromat-vendor/id6826253908',

@@ -7,6 +7,7 @@ import FloorDust from '../three/FloorDust';
 import Stage from '../three/Stage';
 import BubbleField from '../ui/BubbleField';
 import Icon from '../ui/Icon';
+import BookAppLink from '../ui/BookAppLink';
 
 const defaultVariant: Variant = 'home-cleaning';
 
@@ -49,9 +50,7 @@ export default function Hero() {
             <p>{current.description}</p>
           </div>
           <div className="hero-actions">
-            <Link href={`/book?service=${variant}`} className="button primary">
-              <Icon name="bag" size={17} />{current.action}
-            </Link>
+            {current.action === 'Get a Quote' ? <Link href={`/book?service=${variant}`} className="button primary"><Icon name="bag" size={17} />{current.action}</Link> : <BookAppLink className="button primary" service={variant}><Icon name="bag" size={17} />{current.action}</BookAppLink>}
             <a href="#services" className="button secondary">View Services</a>
           </div>
         </div>
